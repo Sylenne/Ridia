@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>new project</title>
+    <title>gate</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <meta itemprop="name" content="new project">
+    <meta itemprop="name" content="gate">
     <meta itemprop="description" content="made with cables">
     <meta itemprop="image" content="screenshot.png">
     <meta name="description" content="made with cables" />
@@ -34,11 +33,24 @@
         footer a, footer a:hover, footer a:active {
             color: #24baa7;
         }
+        div{
+            display: none;
+        }
     </style>
 
 </head>
-<body>
-    <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
+<body style="overflow: hidden;">
+    <a href="https://seoullandscapes.cargo.site/" style="position: absolute; z-index: 2; width: 283%;">
+        <img src="carre.png" style="position: absolute; z-index: 2; width: 23%; opacity: 0;">
+        </a>
+     <a href="http://127.0.0.1/Sahan/" style="position: absolute; z-index: 1; width: 283%; margin-left: 69%; opacity: 0;">
+            <img src="carre.png" style="position: absolute; z-index: 1; width: 23%; opacity: 1;">
+     </a>
+    
+    <div id ="no" style="position: absolute;z-index: 1; width: 100%;">
+    <img id="myDropdown" src="img.gif" style="width: 116%; position:absolute; margin-left: -6%; margin-top:-10%; display: inline-block;" alt="" class="post-thumb" onclick='this.src=this.src'/>
+    </div>
+    <canvas id="glcanvas" width="100vw" height="100vh" style="z-index: -1s;"></canvas>
     <footer>
         made with <a href='https://cables.gl'>cables</a>
         <!-- we would greatly appreciate if you link cables somewhere on your site! and tell us your website! thanks <3 :) -->
@@ -79,5 +91,33 @@
             });
         });
     </script>
+    <script>
+        window.onload = function(){
+        
+        var links = document.getElementsByTagName('a');
+        for( var i=0,il = links.length; i< il; i ++ ){
+         links[i].onclick = clickHandler;
+        }
+        
+        function clickHandler(event) {
+        
+        event.preventDefault();
+        
+        setTimeout(function() {
+        
+          location.href = this.href;
+        }, 2000);
+        
+        
+        };
+        };
+        </script>
+        <script>
+            window.onclick = myFunction;
+            
+            function myFunction() {
+              document.getElementsByTagName("DIV")[0].style.display = "inline-block";
+            }
+            </script>
 </body>
 </html>
